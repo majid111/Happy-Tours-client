@@ -6,6 +6,8 @@ const Navbar = () => {
 
   const {user,logOut}=useContext(AuthContext);
 
+  const userimage = user? user.photoURL ||userDefaultPic : userDefaultPic;
+
   const navigation = 
     <>
       <li>
@@ -55,28 +57,35 @@ const Navbar = () => {
             {navigation}
           </ul>
         </div>
-        <Link to='/' className="btn btn-ghost text-xl">Happy Tours</Link>
+        <Link to='/' className="btn btn-ghost text-xl">Happy <span className="text-orange-600">Tours</span></Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navigation}</ul>
       </div>
       <div className="navbar-end">
-        <div
-          className="btn btn-ghost "
-        >
-            {user ? <img className="w-10 rounded-full"
+      <div className="mr-4">
+          {user ? (
+            <img
+              className="w-10 rounded-full my-anchor-element"
               alt="Tailwind CSS Navbar component"
-              src={userDefaultPic}
-            />:<Link to="/register">
-            <button className="btn bg-black text-white">Register</button>
-          </Link>}
+              src={userimage}
+            />
+          ) : (
+            <Link to="/register">
+              <button className="btn bg-black text-white">Register</button>
+            </Link>
+          )}
         </div>
-        {
-          user ? <button onClick={handleLogOut} className="btn">Log Out</button>:
-        <Link to="/login">
-          <button className="btn bg-black text-white">Login</button>
-        </Link>
-        }
+        {user ? (
+          <button onClick={handleLogOut} className="btn">
+            Log Out
+          </button>
+        ) : (
+          <Link to="/login">
+            <button className="btn bg-black text-white">Login</button>
+          </Link>
+        )}
+      
       </div>
     </div>
   );

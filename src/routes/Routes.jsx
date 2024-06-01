@@ -16,28 +16,40 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
-        loader: ()=> fetch('/news.json'),
       },
       {
         path: "/updateTouristsSpot/:id",
-        element: <PrivateRoute><UpdateTouristsSpot></UpdateTouristsSpot></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <UpdateTouristsSpot></UpdateTouristsSpot>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/allTouristsSpot",
+        loader: () => fetch("http://localhost:5000/happyTours"),
         element: <AllTouristsSpot></AllTouristsSpot>,
       },
       {
         path: "/addTouristsSpot",
-        element: <PrivateRoute><AddTouristsSpot></AddTouristsSpot></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <AddTouristsSpot></AddTouristsSpot>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myList",
-        element: <PrivateRoute><MyList></MyList></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <MyList></MyList>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",

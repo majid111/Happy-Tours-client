@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signInUser, signInGoogle, signInGithub } = useContext(AuthContext);
@@ -67,9 +68,38 @@ const Login = () => {
     })
     .catch((error) => console.log(error));
   }
+  const handleGithubSignIn=()=>{
+    signInGithub()
+    .then((result) => {
+      // console.log(result.user.metadata.lastSignInTime);
+      console.log(result.user);
+      const user = {
+        email:result.user.email,
+        lastLoggedAt: result.user.metadata.lastSignInTime,
+      };
+
+      //update/patch
+      fetch("https://coffee-store-server-two-henna.vercel.app/users", {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(user),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+      navigate(location?.state ? location.state : "/");
+    })
+    .catch((error) => console.log(error));
+  }
 
   return (
     <div>
+      <Helmet>
+        <title>Happy Tours | Login</title>
+      </Helmet>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col md:w-3/4 lg:w-1/2">
           <div className="text-center lg:text-left">
@@ -116,7 +146,7 @@ const Login = () => {
                 <FaGoogle />
                 Google
               </button>
-              <button className="btn btn-outline">
+              <button onClick={handleGithubSignIn} className="btn btn-outline">
                 <FaGithub />
                 Github
               </button>
