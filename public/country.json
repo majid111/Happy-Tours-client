@@ -10,7 +10,7 @@
         "economy": "Oil and gas, mining, agriculture",
         "interesting_fact": "Kazakhstan is the largest landlocked country in the world.",
         "description": "Kazakhstan, located in Central Asia, is known for its vast steppes, rich natural resources, and diverse cultural heritage.",
-        "image_url": "https://example.com/images/kazakhstan.jpg"
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Central_Downtown_Astana_2.jpg/266px-Central_Downtown_Astana_2.jpg"
       },
       {
         "name": "Kyrgyzstan",
@@ -22,7 +22,7 @@
         "economy": "Agriculture, gold mining, remittances",
         "interesting_fact": "The Tian Shan mountain range covers about 80% of the country.",
         "description": "Kyrgyzstan is a mountainous country in Central Asia, renowned for its stunning natural landscapes and nomadic culture.",
-        "image_url": "https://example.com/images/kyrgyzstan.jpg"
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wv_Bishkek_banner.jpg/1920px-Wv_Bishkek_banner.jpg"
       },
       {
         "name": "Tajikistan",
@@ -34,7 +34,7 @@
         "economy": "Aluminum production, agriculture, remittances",
         "interesting_fact": "Tajikistan is home to the world's second-highest dam, the Nurek Dam.",
         "description": "Tajikistan, with its rugged terrain and rich history, is known for its scenic mountains and ancient cultural heritage.",
-        "image_url": "https://example.com/images/tajikistan.jpg"
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Palace_of_Nations_and_the_Flagpole%2C_Dushanbe%2C_Tajikistan.JPG/1024px-Palace_of_Nations_and_the_Flagpole%2C_Dushanbe%2C_Tajikistan.JPG"
       },
       {
         "name": "Turkmenistan",
@@ -46,7 +46,7 @@
         "economy": "Natural gas and oil exports",
         "interesting_fact": "The Karakum Desert occupies about 70% of Turkmenistan's territory.",
         "description": "Turkmenistan is a country in Central Asia with vast deserts and a significant natural gas industry, known for its unique cultural practices.",
-        "image_url": "https://example.com/images/turkmenistan.jpg"
+        "image_url": "https://upload.wikimedia.org/wikipedia/en/0/01/Independence_Square%2C_Ashgabat.jpg"
       },
       {
         "name": "Uzbekistan",
@@ -58,7 +58,7 @@
         "economy": "Cotton production, gold mining, natural gas, automotive manufacturing",
         "interesting_fact": "Uzbekistan is one of the world's top producers of cotton.",
         "description": "Uzbekistan is a culturally rich country in Central Asia, famous for its historic cities like Samarkand and Bukhara, which were key points on the Silk Road.",
-        "image_url": "https://example.com/images/uzbekistan.jpg"
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Nest_One_Tashkent.jpg/1024px-Nest_One_Tashkent.jpg"
       },
       {
         "name": "Afghanistan",
@@ -70,7 +70,7 @@
         "economy": "Agriculture, mining, textiles",
         "interesting_fact": "Afghanistan is known for its diverse ethnic groups and has a rich history influenced by various civilizations.",
         "description": "Afghanistan, located at the crossroads of Central and South Asia, has a complex history and diverse culture, with significant natural and historical landmarks.",
-        "image_url": "https://example.com/images/afghanistan.jpg"
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Kabul%2C_Afghanistan_view.jpg"
       }
     ]
   }

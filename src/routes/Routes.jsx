@@ -11,6 +11,8 @@ import AllTouristsSpot from "../pages/AllTouristsSpot/AllTouristsSpot";
 import AboutUs from "../pages/AboutUs/AboutUs";
 import Contact from "../pages/Contact/Contact";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import CountrySpots from "../pages/CountrySpots/CountrySpots";
+import TouristsSpotDetails from "../pages/TouristsSpotDetails/TouristsSpotDetails";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        loader: () => fetch("http://localhost:5000/countries"),
         element: <Home></Home>,
       },
       {
@@ -29,11 +32,30 @@ const router = createBrowserRouter([
             <UpdateTouristsSpot></UpdateTouristsSpot>
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/happyTours/${params.id}`),
       },
       {
         path: "/allTouristsSpot",
         loader: () => fetch("http://localhost:5000/happyTours"),
         element: <AllTouristsSpot></AllTouristsSpot>,
+      },
+      {
+        path: "/allTouristsSpot/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/happyTours/${params.id}`),
+        element: <TouristsSpotDetails></TouristsSpotDetails>,
+      },
+      // {
+      //   path: "/happyTours/:name",
+      //   loader: ({params}) => fetch(`http://localhost:5000/happyTours/${params.name}`),
+      //   element: <CountrySpots></CountrySpots>,
+      // },
+      {
+        path: "/countries/:name",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/countries/${params.name}`),
+        element: <CountrySpots></CountrySpots>,
       },
       {
         path: "/addTouristsSpot",

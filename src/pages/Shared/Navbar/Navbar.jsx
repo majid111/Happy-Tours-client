@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import userDefaultPic from '../../../assets/user.png';
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import { Tooltip } from "react-tooltip";
 const Navbar = () => {
 
   const {user,logOut}=useContext(AuthContext);
@@ -32,6 +33,7 @@ const Navbar = () => {
   
   return (
     <div className="navbar bg-base-100">
+      <Tooltip anchorSelect=".my-anchor-element" content={user?.displayName || "No Name"} />
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
