@@ -32,7 +32,7 @@ const TouristSpotCard = ({ touristsSpot, touristsSpots, setTouristsSpots }) => {
       if (result.isConfirmed) {
         console.log(_id);
         fetch(
-          `http://localhost:5000/happyTours/${_id}`,
+          `https://happy-tours-server.vercel.app/happyTours/${_id}`,
           {
             method: "DELETE",
           }

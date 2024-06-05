@@ -13,7 +13,7 @@ const Home = () => {
   const touristsSpot6= touristsSpot.length>6? touristsSpot.slice(0,6):touristsSpot;
 
   useEffect(() => {
-    fetch("http://localhost:5000/happyTours")
+    fetch("https://happy-tours-server.vercel.app/happyTours")
       .then((result) => result.json())
       .then((data) => setTouristsSpot(data));
   }, []);

@@ -45,7 +45,7 @@ const UpdateTouristsSpot = () => {
         };
     
         //send data to the server
-        fetch(`http://localhost:5000/happyTours/${_id}`, {
+        fetch(`https://happy-tours-server.vercel.app/happyTours/${_id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",

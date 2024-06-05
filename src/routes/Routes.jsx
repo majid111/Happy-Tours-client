@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: () => fetch("http://localhost:5000/countries"),
+        loader: () => fetch("https://happy-tours-server.vercel.app/countries"),
         element: <Home></Home>,
       },
       {
@@ -35,28 +35,28 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/happyTours/${params.id}`),
+          fetch(`https://happy-tours-server.vercel.app/happyTours/${params.id}`),
       },
       {
         path: "/allTouristsSpot",
-        loader: () => fetch("http://localhost:5000/happyTours"),
+        loader: () => fetch("https://happy-tours-server.vercel.app/happyTours"),
         element: <AllTouristsSpot></AllTouristsSpot>,
       },
       {
         path: "/allTouristsSpot/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/happyTours/${params.id}`),
+          fetch(`https://happy-tours-server.vercel.app/happyTours/${params.id}`),
         element: <TouristsSpotDetails></TouristsSpotDetails>,
       },
       // {
       //   path: "/happyTours/:name",
-      //   loader: ({params}) => fetch(`http://localhost:5000/happyTours/${params.name}`),
+      //   loader: ({params}) => fetch(`https://happy-tours-server.vercel.app/happyTours/${params.name}`),
       //   element: <CountrySpots></CountrySpots>,
       // },
       {
         path: "/countries/:name",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/countries/${params.name}`),
+          fetch(`https://happy-tours-server.vercel.app/countries/${params.name}`),
         element: <CountrySpots></CountrySpots>,
       },
       {
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/myList",
-        loader: () => fetch("http://localhost:5000/happyTours"),
+        loader: () => fetch("https://happy-tours-server.vercel.app/happyTours"),
         element: (
           <PrivateRoute>
             <MyList></MyList>
