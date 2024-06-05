@@ -18,7 +18,6 @@ const TouristSpotCard = ({ touristsSpot, touristsSpots, setTouristsSpots }) => {
     userName,
   } = touristsSpot;
 
-  console.log(touristsSpot);
 
   const handleDelete = (_id) => {
     Swal.fire({
@@ -74,7 +73,10 @@ const TouristSpotCard = ({ touristsSpot, touristsSpots, setTouristsSpots }) => {
         <p>Total Visitors Per Year: {totaVisitorsPerYear}</p>
         <p>Short Description: {shortDescription}</p>
         <div className="card-actions gap-6">
-          <button className="btn btn-primary">View</button>
+          
+          <Link to={`/allTouristsSpot/${_id}`}>
+            <button className="btn btn-primary">View</button>
+          </Link>
           <Link to={`/updateTouristsSpot/${_id}`}>
             <button className="btn btn-primary">Edit</button>
           </Link>

@@ -2,7 +2,7 @@
 const Review = () => {
     return (
         <div>
-           Review 
+           Review section is coming soon...
         </div>
     );
 };

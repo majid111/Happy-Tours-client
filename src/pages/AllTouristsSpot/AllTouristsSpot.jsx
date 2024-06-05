@@ -1,12 +1,9 @@
-import { useState } from "react";
-import TouristSpotCard from "../TouristsSpotCard/TouristSpotCard";
 import { useLoaderData } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import TouristsSpot from "../Home/TouristsSpot";
 
 const AllTouristsSpot = () => {
-    const loadedtouristsSpots = useLoaderData();
-  const [touristsSpots, setTouristsSpots] = useState(loadedtouristsSpots);
-  console.log(touristsSpots);
+  const touristsSpots = useLoaderData();
   return (
     <div>
       <Helmet>
@@ -15,14 +12,9 @@ const AllTouristsSpot = () => {
       <h2 className="text-3xl text-blue-700 font-extrabold">
         This is home {touristsSpots.length}{" "}
       </h2>
-      <div className="grid md:grid-cols-2 gap-4">
-        {touristsSpots.map((touristsSpot) => (
-          <TouristSpotCard
-            key={touristsSpot._id}
-            touristsSpots={touristsSpots}
-            setTouristsSpots={setTouristsSpots}
-            touristsSpot={touristsSpot}
-          ></TouristSpotCard>
+      <div className="grid  gap-4">
+        {touristsSpots.map((spot) => (
+          <TouristsSpot key={spot._id} spot={spot}></TouristsSpot>
         ))}
       </div>
     </div>

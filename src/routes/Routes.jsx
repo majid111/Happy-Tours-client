@@ -14,6 +14,8 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import CountrySpots from "../pages/CountrySpots/CountrySpots";
 import TouristsSpotDetails from "../pages/TouristsSpotDetails/TouristsSpotDetails";
 
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -67,6 +69,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/myList",
+        loader: () => fetch("http://localhost:5000/happyTours"),
         element: (
           <PrivateRoute>
             <MyList></MyList>

@@ -1,8 +1,7 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Banner from "./Banner";
 import TouristsSpot from "./TouristsSpot";
 import Slider from "./Slider";
-import Offer from "./Offer";
 import Review from "./Review";
 import Countries from "./Countries";
 import { useEffect, useState } from "react";
@@ -11,6 +10,7 @@ import { Helmet } from "react-helmet-async";
 const Home = () => {
   const countrys = useLoaderData();
   const [touristsSpot, setTouristsSpot] = useState([]);
+  const touristsSpot6= touristsSpot.length>6? touristsSpot.slice(0,6):touristsSpot;
 
   useEffect(() => {
     fetch("http://localhost:5000/happyTours")
@@ -27,14 +27,16 @@ const Home = () => {
       <Banner></Banner>
       <section>
         <h2 className="text-3xl text-center mb-12 font-bold">Tourists Spot</h2>
-        <div className="grid gap-10 ">
+        <div id="tours" className="grid gap-10 ">
             {
-                touristsSpot.map(spot=><TouristsSpot key={spot._id} spot={spot}></TouristsSpot>)
+                touristsSpot6.map(spot=><TouristsSpot key={spot._id} spot={spot}></TouristsSpot>)
             }
+            <div className="mx-auto">
+            <Link to="/allTouristsSpot"><button className="btn bg-[#23BE0A] text-white">View More</button></Link>
+            </div>
         </div>
       </section>
       <Slider></Slider>
-      <Offer></Offer>
       <section>
         <h2 className="text-3xl text-center mb-12 font-bold">Countries</h2>
         <div className="grid  gap-10 md:grid-cols-2 lg:grid-cols-3">
@@ -44,7 +46,6 @@ const Home = () => {
         </div>
       </section>
       <Review></Review>
-      <h2 className="text-3xl font-poppins">This is home</h2>
     </div>
   );
 };
